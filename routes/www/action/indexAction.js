@@ -13,6 +13,7 @@ var indexServer = require('../server/indexServer.js');
 router.get('/', function(req, res, next) {
     var data=[{id:'1'},{username:'lvbu'}];
     indexServer.queryTop(data,function (err,results) {
+        console.info(results);
         res.render('www/index', {title:'文章列表',items:results});
     });
 });

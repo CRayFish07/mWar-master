@@ -15,3 +15,11 @@ mWar
 >6.<%% 转义为 '<%'<br/>
 >7.<% ... -%> 删除新的空白行模式?<br/>
 >8.<%_ ... _%> 删除空白符模式
+forever的安装：
+
+#forever的用法：
+>使用forever启动守护进程：forever start your_app.js<br/>
+>关闭守护进程：forever stop your_app.js<br/>
+>重启守护进程：：forever restart your_app.js<br/>
+>如果需要记录输出日志和错误：forever start -l forever.log -o out.log -e err.log your_app.js<br/>
+>查看正在运行的程序：forever list<br/>
