@@ -23,3 +23,27 @@ forever的安装：
 >重启守护进程：：forever restart your_app.js<br/>
 >如果需要记录输出日志和错误：forever start -l forever.log -o out.log -e err.log your_app.js<br/>
 >查看正在运行的程序：forever list<br/>
+
+
+
+<!--<h1>电脑端首页</h1>
+<h1><%= title %></h1>
+<p><a href="/form">发表新文章111</a></p>
+<ul>
+    <%items.forEach(function(item){%>
+    <li><%=item.id%></li>
+    <li><%=item.username%></li>
+    <li><%=item.nikename%></li>
+    <li><%=item.password%></li>
+    <li><%=item.age%></li>
+    <li><%=item.sex%></li>
+    <li><%=item.email%></li>
+    <br/>
+    <%})%>
+
+    <ul class="nav nav-pills">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+    </ul>
+</ul>-->
