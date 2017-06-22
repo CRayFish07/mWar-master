@@ -24,6 +24,8 @@ forever的安装：
 >如果需要记录输出日志和错误：forever start -l forever.log -o out.log -e err.log your_app.js<br/>
 >查看正在运行的程序：forever list<br/>
 
+#占位图
+>http://placeholder.cn/820x200
 
 
 <!--<h1>电脑端首页</h1>

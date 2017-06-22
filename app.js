@@ -11,9 +11,13 @@ var users = require('./routes/users');
 var login = require('./routes/login');
 var windex = require('./routes/www/action/indexAction');
 
+//admin路由
+var alogin = require('./routes/admin/action/loginAction');
+var adminUser = require('./routes/admin/action/userAction.js');
+
 var app = express();
 
-// view engine setup
+// view engine setup 视图引擎设置
 app.engine('html',ejs.__express);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
@@ -37,6 +41,9 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/login', login);
 app.use('/index', windex);
+
+app.use('/admin', alogin);
+app.use('/admin/user', adminUser);
 
 
 // catch 404 and forward to error handler
