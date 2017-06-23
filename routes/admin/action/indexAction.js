@@ -6,17 +6,28 @@
  */
 var express = require('express');
 var router = express.Router();
-var indexServer = require('../server/indexServer.js');
+var indexService = require('../server/indexServer');
 
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-    var data=[{id:'1'},{username:'lvbu'}];
-    indexServer.queryTop(data,function (err,results) {
-        console.info(results);
-        res.render('www/index', {title:'文章列表',items:results});
-    });
+/* GET login page. */
+router.post('/loginAction', function(req, res, next) {
+    if (!req.body) return res.sendStatus(400);
+    console.log(req.body);
+    indexService.queryUser(req.body , function (err,result) {
+        if(result.length == 0){
+            return res.json({err:0});
+        }
+        req.session.user = result[0];
+        return res.json({success:'登录成功！'});
+    })
 });
 
+/* GET home page. */
+router.get('/index', function(req, res, next) {
+    console.log(req.session.user);
+    if (!req.session.user) {
+        return res.redirect('/admin/login');
+    }
+    res.render('admin/index');
+});
 module.exports = router;
 

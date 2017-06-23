@@ -15,7 +15,8 @@ mWar
 >6.<%% 转义为 '<%'<br/>
 >7.<% ... -%> 删除新的空白行模式?<br/>
 >8.<%_ ... _%> 删除空白符模式
-forever的安装：
+>9.支持include  <% include common/head.html %> 利于模块整理
+
 
 #forever的用法：
 >使用forever启动守护进程：forever start your_app.js<br/>
@@ -27,6 +28,8 @@ forever的安装：
 #占位图
 >http://placeholder.cn/820x200
 
+#加入express-session
+>npm install --save express-session session-file-store
 
 <!--<h1>电脑端首页</h1>
 <h1><%= title %></h1>

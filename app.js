@@ -5,6 +5,7 @@ var logger = require('morgan');//在控制台中，显示req请求的信息
 var cookieParser = require('cookie-parser');//这就是一个解析Cookie的工具。通过req.cookies可以取到传过来的cookie，并把它们转成对象。
 var bodyParser = require('body-parser');//node.js 中间件，用于处理 JSON, Raw, Text 和 URL 编码的数据。
 var ejs = require('ejs');
+var session = require('express-session');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -12,7 +13,8 @@ var login = require('./routes/login');
 var windex = require('./routes/www/action/indexAction');
 
 //admin路由
-var alogin = require('./routes/admin/action/loginAction');
+var adminIndex = require('./routes/admin/action/indexAction');
+var adminLogin = require('./routes/admin/action/loginAction');
 var adminUser = require('./routes/admin/action/userAction.js');
 
 var app = express();
@@ -31,10 +33,27 @@ app.use(function (req, res, next) {
 // 载入中间件
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+
+//app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+    secret: 'mWar',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 300 * 1000 }
+}));
+
+app.use('/admin', function (req, res, next) {
+    var url = req.originalUrl;
+    console.log(url);
+    if(!req.session.user && url.indexOf("login") == -1){
+        res.redirect("/admin/login");
+        return;
+    }
+    next();
+});
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
@@ -42,7 +61,8 @@ app.use('/users', users);
 app.use('/login', login);
 app.use('/index', windex);
 
-app.use('/admin', alogin);
+app.use('/admin', adminIndex);
+app.use('/admin/login', adminLogin);
 app.use('/admin/user', adminUser);
 
 
