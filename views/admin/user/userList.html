@@ -1,0 +1,67 @@
+<div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="/admin/index">主页</a>
+        </li>
+        <li>
+            <a href="/admin/user/list">用户列表</a>
+        </li>
+    </ul>
+</div>
+<div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2>用户列表</h2>
+            </div>
+            <div class="box-content">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>用户名</th>
+                        <th>昵称</th>
+                        <th>密码</th>
+                        <th>电话</th>
+                        <th>邮箱</th>
+                        <th>年龄</th>
+                        <th>性别</th>
+                        <th>备注</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <%items.forEach(function(item,index){%>
+                        <tr>
+                            <td><%=index+1%></td>
+                            <td><%=item.username%></td>
+                            <td><%=item.nickname%></td>
+                            <td><%=item.password%></td>
+                            <td><%=item.iphone%></td>
+                            <td><%=item.email%></td>
+                            <td><%=item.age%></td>
+                            <td><%=item.sex%></td>
+                            <td><%=item.mark%></td>
+                            <td class="center">
+                                <span class="label-success label label-default">Active</span>
+                            </td>
+                        </tr>
+                    <%})%>
+                    </tbody>
+                </table>
+                <ul class="pagination pagination-centered">
+                    <li><a href="#">Prev</a></li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">Next</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/span-->
+
+</div>

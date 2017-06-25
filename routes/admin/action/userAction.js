@@ -6,11 +6,16 @@
  */
 var express = require('express');
 var router = express.Router();
+var userServer = require('../server/userServer.js');
 
-/* GET home page. */
+/* GET userList page. */
 router.get('/list', function(req, res, next) {
-    res.render('admin/user/list', {title:'用户列表'});
+    userServer.queryUser("data",function (err, results) {
+        if(err.length > 0){
+            return err;
+        }
+        return res.render('admin/user/userList',{items:results});
+    });
 });
-
 module.exports = router;
 

@@ -38,16 +38,16 @@ app.use(function (req, res, next) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 app.use(session({
     secret: 'mWar',
-    resave: false,
+    resave: true,
     saveUninitialized: true,
-    cookie: { maxAge: 300 * 1000 }
+    cookie: { maxAge: 1800000 }
 }));
 
 app.use('/admin', function (req, res, next) {
     var url = req.originalUrl;
-    console.log(url);
     if(!req.session.user && url.indexOf("login") == -1){
         res.redirect("/admin/login");
         return;

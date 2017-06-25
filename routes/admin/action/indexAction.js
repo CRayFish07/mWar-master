@@ -11,7 +11,6 @@ var indexService = require('../server/indexServer');
 /* GET login page. */
 router.post('/loginAction', function(req, res, next) {
     if (!req.body) return res.sendStatus(400);
-    console.log(req.body);
     indexService.queryUser(req.body , function (err,result) {
         if(result.length == 0){
             return res.json({err:0});

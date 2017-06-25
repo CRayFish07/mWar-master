@@ -1,7 +1,7 @@
 $(document).ready(function () {
     //themes, change CSS with JS
     //default theme(CSS) is cerulean, change it if needed
-    var defaultTheme = 'cerulean';
+    var defaultTheme = 'classic';
 
     var currentTheme = $.cookie('currentTheme') == null ? defaultTheme : $.cookie('currentTheme');
     var msie = navigator.userAgent.match(/msie/i);
@@ -9,6 +9,7 @@ $(document).ready(function () {
     $.browser.msie = {};
     switchTheme(currentTheme);
 
+    //折叠用
     $('.navbar-toggle').click(function (e) {
         e.preventDefault();
         $('.nav-sm').html($('.navbar-collapse').html());
@@ -68,7 +69,7 @@ $(document).ready(function () {
     }
 
 
-    //highlight current / active link
+    //默认第一条为选中状态
     $('ul.main-menu li a').each(function () {
         if ($($(this))[0].href == String(window.location))
             $(this).parent().addClass('active');
@@ -96,30 +97,63 @@ $(document).ready(function () {
         });
     });
 
-    //ajaxify menus
+    //ajax menus
     $('a.ajax-link').click(function (e) {
+/*
+        console.log("msie====="+msie);
         if (msie) e.which = 1;
         if (e.which != 1 || !$('#is-ajax').prop('checked') || $(this).parent().hasClass('active')) return;
-        e.preventDefault();
+        if ( e && e.preventDefault )
+            e.preventDefault();
+        else
+            window.event.returnValue = false;
+        return false;
+
         $('.sidebar-nav').removeClass('active');
         $('.navbar-toggle').removeClass('active');
         $('#loading').remove();
         $('#content').fadeOut().parent().append('<div id="loading" class="center">Loading...<div class="center"></div></div>');
-        var $clink = $(this);
-        History.pushState(null, null, $clink.attr('href'));
-        $('ul.main-menu li.active').removeClass('active');
-        $clink.parent('li').addClass('active');
+*/
+
+        $.ajax({
+            type: "get",
+            url: $(this).attr('href'),
+            dataType: "html",
+            success: function (html) {
+                if(html){
+                    $("#content").empty().append(html);
+                } else{
+                    console.log("“返回值为空”");
+                }
+            },
+            error: function (e) {
+                alert("请求出现错误！");
+            }
+        });
+
+        //阻止浏览器默认事件
+        if ( e && e.preventDefault ){
+            e.preventDefault();
+        }else{
+            window.event.returnValue = false;
+            return false;
+        }
     });
 
     $('.accordion > a').click(function (e) {
         e.preventDefault();
+        $(".main-menu .active").removeClass("active");
         var $ul = $(this).siblings('ul');
         var $li = $(this).parent();
-        if ($ul.is(':visible')) $li.removeClass('active');
-        else                    $li.addClass('active');
+        if ($ul.is(':visible'))
+            $li.removeClass('active');
+        else
+            $li.addClass('active');
         $ul.slideToggle();
+        $(this).closest('.accordion').addClass('active');
     });
 
+    //默认菜单中第一个有子菜单是打开状态
     $('.accordion li.active:first').parents('ul').slideDown();
 
 
