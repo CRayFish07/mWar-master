@@ -26,7 +26,7 @@ router.get('/index', function(req, res, next) {
     if (!req.session.user) {
         return res.redirect('/admin/login');
     }
-    res.render('admin/index');
+    return res.render('admin/index',{title:'后台管理首页'});
 });
 module.exports = router;
 

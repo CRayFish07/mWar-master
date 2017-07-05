@@ -19,6 +19,7 @@ mWar
 
 
 #forever的用法：
+npm install forever -gd
 >使用forever启动守护进程：forever start your_app.js<br/>
 >关闭守护进程：forever stop your_app.js<br/>
 >重启守护进程：：forever restart your_app.js<br/>

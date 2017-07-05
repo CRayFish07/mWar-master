@@ -17,3 +17,24 @@ exports.queryUser = function(data, callback){
         callback(false, results);
     });
 };
+
+exports.addUser = function(data, callback){
+    userDao.addUser(data, function(err, results){
+        if(err){
+            callback(true);
+            return;
+        }
+        callback(false, results);
+    });
+};
+
+exports.queryUserById = function(data, callback){
+    userDao.queryUserById(data, function(err, results){
+        if(err){
+            callback(true);
+            return;
+        }
+        callback(false, results);
+    });
+};
+

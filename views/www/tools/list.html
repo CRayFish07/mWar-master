@@ -1,0 +1,122 @@
+<% include ../wcommon/head.html %>
+<link href="/css/admin/charisma-app.css" rel="stylesheet">
+<body class="user-select">
+<section class="container">
+    <div class="content-wrap">
+        <div class="row">
+            <div class="box col-md-12">
+                <div class="box-inner">
+                    <div class="box-header well" data-original-title="">
+                        <h2>订餐日期列表</h2>
+                        <div class="box-icon">
+                            <a href="#" title="添加订餐序列" class="btn btn-setting btn-round btn-default"><i class="glyphicon glyphicon-plus"></i></a>
+                            <a href="#" title="修改用户信息" class="btn btn-minimize btn-round btn-default"><i class="glyphicon glyphicon-edit"></i></a>
+                        </div>
+                    </div>
+                    <div class="box-content">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>姓名</th>
+                                <th>本轮排序</th>
+                                <th>日期</th>
+                                <th>花费</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>迟新</td>
+                                <td>1</td>
+                                <td class="center">2012/01/01</td>
+                                <td class="center">Member</td>
+                                <td class="center">
+                                    <span class="label-success label label-default">已订购</span>
+                                </td>
+                                <td class="center ">
+                                    <a class="btn btn-success" href="#">
+                                        <i class="glyphicon glyphicon-zoom-in icon-white"></i>
+                                        View
+                                    </a>
+                                    <a class="btn btn-info" href="#">
+                                        <i class="glyphicon glyphicon-edit icon-white"></i>
+                                        Edit
+                                    </a>
+                                    <a class="btn btn-danger" href="#">
+                                        <i class="glyphicon glyphicon-trash icon-white"></i>
+                                        Delete
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>迟新</td>
+                                <td class="center">2012/02/01</td>
+                                <td class="center">2012/02/01</td>
+                                <td class="center">Staff</td>
+                                <td class="center">
+                                    <span class="label-default label label-danger">未订购</span>
+                                </td>
+                                <td class="center ">
+                                    <a class="btn btn-success" href="#">
+                                        <i class="glyphicon glyphicon-zoom-in icon-white"></i>
+                                        View
+                                    </a>
+                                    <a class="btn btn-info" href="#">
+                                        <i class="glyphicon glyphicon-edit icon-white"></i>
+                                        Edit
+                                    </a>
+                                    <a class="btn btn-danger" href="#">
+                                        <i class="glyphicon glyphicon-trash icon-white"></i>
+                                        Delete
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!--<ul class="pagination pagination-centered">
+                            <li><a href="#">Prev</a></li>
+                            <li class="active">
+                                <a href="#">1</a>
+                            </li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">Next</a></li>
+                        </ul>-->
+                    </div>
+                </div>
+            </div>
+            <!--/span-->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
+
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                            <h3>Settings</h3>
+                        </div>
+                        <div class="modal-body">
+                            <p>Here settings can be configured...</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+                            <a href="#" class="btn btn-primary" data-dismiss="modal">Save changes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<% include ../wcommon/footer.html %>
+<% include ../wcommon/js.html %>
+<script>
+    $('.btn-setting').click(function (e) {
+        e.preventDefault();
+        $('#myModal').modal('show');
+    });
+</script>
+</body>
+</html>

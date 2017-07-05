@@ -10,7 +10,10 @@ var session = require('express-session');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
+
+//www路由
 var windex = require('./routes/www/action/indexAction');
+var wtools = require('./routes/www/action/toolsAction');
 
 //admin路由
 var adminIndex = require('./routes/admin/action/indexAction');
@@ -60,6 +63,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/login', login);
 app.use('/index', windex);
+app.use('/tools', wtools);
 
 app.use('/admin', adminIndex);
 app.use('/admin/login', adminLogin);

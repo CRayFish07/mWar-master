@@ -6,9 +6,9 @@
  */
 module.exports = {
     mysql_dev: {
-        host     : 'localhost',
+        host     : '114.215.131.38',
         user     : 'root',
-        password : '123456',
+        password : 'deankamen',
         database: 'mwar',
         connectionLimit: 100,
         supportBigNumbers: true

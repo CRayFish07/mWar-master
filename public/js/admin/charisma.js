@@ -76,26 +76,26 @@ $(document).ready(function () {
     });
 
     //establish history variables
-    var
-        History = window.History, // Note: We are using a capital H instead of a lower h
-        State = History.getState(),
-        $log = $('#log');
-
-    //bind to State Change
-    History.Adapter.bind(window, 'statechange', function () { // Note: We are using statechange instead of popstate
-        var State = History.getState(); // Note: We are using History.getState() instead of event.state
-        $.ajax({
-            url: State.url,
-            success: function (msg) {
-                $('#content').html($(msg).find('#content').html());
-                $('#loading').remove();
-                $('#content').fadeIn();
-                var newTitle = $(msg).filter('title').text();
-                $('title').text(newTitle);
-                docReady();
-            }
-        });
-    });
+    // var
+    //     History = window.History, // Note: We are using a capital H instead of a lower h
+    //     State = History.getState(),
+    //     $log = $('#log');
+    //
+    // //bind to State Change
+    // History.Adapter.bind(window, 'statechange', function () { // Note: We are using statechange instead of popstate
+    //     var State = History.getState(); // Note: We are using History.getState() instead of event.state
+    //     $.ajax({
+    //         url: State.url,
+    //         success: function (msg) {
+    //             $('#content').html($(msg).find('#content').html());
+    //             $('#loading').remove();
+    //             $('#content').fadeIn();
+    //             var newTitle = $(msg).filter('title').text();
+    //             $('title').text(newTitle);
+    //             docReady();
+    //         }
+    //     });
+    // });
 
     //ajax menus
     $('a.ajax-link').click(function (e) {
@@ -125,6 +125,7 @@ $(document).ready(function () {
                 } else{
                     console.log("“返回值为空”");
                 }
+                doLink();
             },
             error: function (e) {
                 alert("请求出现错误！");
@@ -139,6 +140,7 @@ $(document).ready(function () {
             return false;
         }
     });
+
 
     $('.accordion > a').click(function (e) {
         e.preventDefault();
@@ -156,12 +158,107 @@ $(document).ready(function () {
     //默认菜单中第一个有子菜单是打开状态
     $('.accordion li.active:first').parents('ul').slideDown();
 
-
     //other things to do on document ready, separated for ajax calls
     docReady();
 });
 
+function doLink() {
+    //ajax modal 2017年7月3日
+    $('a.ajax-modal').bind('click',function (e) {
+        var title=$(this).attr('title');
+        $.ajax({
+            type: "get",
+            url: $(this).attr('href'),
+            dataType: "html",
+            success: function (html) {
+                if(html){
+                    $("#myModal .modal-body").html(html);
+                    $('#myModal').modal('show');
+                    $("#modal-title").html(title);
+                } else{
+                    alert("查询结果为空！");
+                }
+            },error: function (e) {
+                alert("请求出现错误！");
+            },complete: function () {
 
+            }
+        });
+        //阻止浏览器默认事件
+        if ( e && e.preventDefault ){
+            e.preventDefault();
+        }else{
+            window.event.returnValue = false;
+            return false;
+        }
+    });
+    //ajax modal 2017年7月5日
+    $('a.ajax-action').bind('click',function (e) {
+        var id=$(this).data('id');
+        console.log(id);
+        if(id){
+            id="?id="+id+"";
+        }else {
+            id="";
+        }
+        var url=$(this).attr('href')+id;
+        console.log();
+        $.ajax({
+            type: "get",
+            url: url,
+            dataType: "html",
+            success: function (html) {
+                if(html){
+                    $("#content").html(html);
+                } else{
+                    alert("查询结果为空！");
+                }
+            },error: function (e) {
+                alert("请求出现错误！");
+            },complete: function () {
+
+            }
+        });
+        //阻止浏览器默认事件
+        if ( e && e.preventDefault ){
+            e.preventDefault();
+        }else{
+            window.event.returnValue = false;
+            return false;
+        }
+    });
+}
+function save(id) {
+    $("#"+id).ajaxSubmit({
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        type: "post",
+        cache: false, success: function (data) {
+            if (data != "") {
+                $("#content").html(data);
+            }
+        }, error: function () {
+            alert("请求出现错误!!!");
+        }, complete: function () {
+            doLink();
+        }
+    });
+
+}
+function popsubmit() {
+    $("#myModal form").ajaxSubmit({
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        type: "post",
+        cache: false, success: function (data) {
+            if (data != "") {
+                $("#content").html(data);
+            }
+        }, error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert("请求出现错误!!!");
+        }, complete: function () {
+            doLink();
+        }
+    });
+}
 function docReady() {
     //prevent # links from moving to top
     $('a[href="#"][data-top!=true]').click(function (e) {
@@ -377,7 +474,6 @@ function docReady() {
             }
         ]
     });
-
 }
 
 

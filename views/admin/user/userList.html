@@ -13,8 +13,19 @@
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
                 <h2>用户列表</h2>
+                <div class="box-icon">
+                    <a href="user/addPageold" title="添加用户" class="btn btn-round btn-default ajax-modal"><i class="glyphicon glyphicon-plus"></i></a>
+                    <a href="user/addPage" title="添加用户" class="btn btn-round btn-default ajax-action"><i class="glyphicon glyphicon-plus"></i></a>
+                </div>
             </div>
             <div class="box-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="dataTables_filter" id="DataTables_Table_0_filter">
+                            <label>用户名: <input type="text" aria-controls="DataTables_Table_0"></label>
+                        </div>
+                    </div>
+                </div>
                 <table class="table table-striped">
                     <thead>
                     <tr>
@@ -42,8 +53,23 @@
                             <td><%=item.age%></td>
                             <td><%=item.sex%></td>
                             <td><%=item.mark%></td>
-                            <td class="center">
-                                <span class="label-success label label-default">Active</span>
+                            <td class="center ">
+                                <a class="btn btn-success" href="#">
+                                    <i class="glyphicon glyphicon-zoom-in icon-white"></i>
+                                    查看
+                                </a>
+                                <a class="btn btn-info ajax-action" href="user/editPage" data-id="<%=item.id%>" title="修改用户">
+                                    <i class="glyphicon glyphicon-edit icon-white"></i>
+                                    修改
+                                </a>
+                                <a class="btn btn-primary" href="#">
+                                    <i class="glyphicon glyphicon-edit icon-white"></i>
+                                    权限
+                                </a>
+                                <a class="btn btn-danger" href="#">
+                                    <i class="glyphicon glyphicon-trash icon-white"></i>
+                                    删除
+                                </a>
                             </td>
                         </tr>
                     <%})%>
@@ -63,5 +89,4 @@
         </div>
     </div>
     <!--/span-->
-
 </div>

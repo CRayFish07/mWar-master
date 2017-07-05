@@ -7,9 +7,9 @@ router.get('/', function(req, res, next) {
     var deviceAgent = req.headers['user-agent'].toLowerCase();
     var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
     if(agentID){
-        res.render('mobile/index', { title: '指到移动网页' });
+        return res.render('mobile/index', { title: '指到移动网页' });
     }else{
-        res.redirect('/index');
+        return res.redirect('/index');
     }
 });
 
