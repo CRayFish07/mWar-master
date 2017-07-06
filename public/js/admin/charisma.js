@@ -165,23 +165,31 @@ $(document).ready(function () {
 function doLink() {
     //ajax modal 2017年7月3日
     $('a.ajax-modal').bind('click',function (e) {
+        var id=$(this).data('id');
+        if(id){
+            id="?id="+id;
+        }else {
+            id="";
+        }
+        var url=$(this).attr('href')+id;
         var title=$(this).attr('title');
         $.ajax({
             type: "get",
-            url: $(this).attr('href'),
+            url: url,
             dataType: "html",
             success: function (html) {
                 if(html){
                     $("#myModal .modal-body").html(html);
                     $('#myModal').modal('show');
                     $("#modal-title").html(title);
+                    $(".modal-footer").hide();
                 } else{
                     alert("查询结果为空！");
                 }
             },error: function (e) {
                 alert("请求出现错误！");
             },complete: function () {
-
+                doLink();
             }
         });
         //阻止浏览器默认事件
@@ -195,14 +203,12 @@ function doLink() {
     //ajax modal 2017年7月5日
     $('a.ajax-action').bind('click',function (e) {
         var id=$(this).data('id');
-        console.log(id);
         if(id){
-            id="?id="+id+"";
+            id="?id="+id;
         }else {
             id="";
         }
         var url=$(this).attr('href')+id;
-        console.log();
         $.ajax({
             type: "get",
             url: url,
@@ -216,7 +222,7 @@ function doLink() {
             },error: function (e) {
                 alert("请求出现错误！");
             },complete: function () {
-
+                doLink();
             }
         });
         //阻止浏览器默认事件
@@ -229,6 +235,7 @@ function doLink() {
     });
 }
 function save(id) {
+    console.log("423423");
     $("#"+id).ajaxSubmit({
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         type: "post",

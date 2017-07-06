@@ -2,32 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="a0ae9fec-fe81-482e-b8f5-94beb5bdcd52" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/admin/jquery.form.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/www/action/toolsAction.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin/user/userAdd.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin/user/user_add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin/user/user_edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/www/tools/list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/www/wcommon/footer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/www/wcommon/head.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/www/wcommon/header.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/www/wcommon/js.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/tool.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.js" afterPath="$PROJECT_DIR$/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/admin/charisma-app.css" afterPath="$PROJECT_DIR$/public/css/admin/charisma-app.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/admin/charisma.js" afterPath="$PROJECT_DIR$/public/js/admin/charisma.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/admin/action/indexAction.js" afterPath="$PROJECT_DIR$/routes/admin/action/indexAction.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/admin/action/userAction.js" afterPath="$PROJECT_DIR$/routes/admin/action/userAction.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/admin/dao/userDao.js" afterPath="$PROJECT_DIR$/routes/admin/dao/userDao.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/admin/server/userServer.js" afterPath="$PROJECT_DIR$/routes/admin/server/userServer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/mysql-pool.js" afterPath="$PROJECT_DIR$/routes/mysql-pool.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/common/footer.html" afterPath="$PROJECT_DIR$/views/admin/common/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/common/js.html" afterPath="$PROJECT_DIR$/views/admin/common/js.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/user/userList.html" afterPath="$PROJECT_DIR$/views/admin/user/userList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/www/index.html" afterPath="$PROJECT_DIR$/views/www/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/user/user_add.html" afterPath="$PROJECT_DIR$/views/admin/user/user_add.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/user/user_edit.html" afterPath="$PROJECT_DIR$/views/admin/user/user_edit.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/views/admin/user/userAdd.html" afterPath="$PROJECT_DIR$/views/admin/user/user_read.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,22 +27,32 @@
       <file leaf-file-name="userList.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/admin/user/userList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="47" column="50" lean-forward="false" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="50" />
+            <state relative-caret-position="264">
+              <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="charisma.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="charisma.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/admin/charisma.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="243" column="7" lean-forward="true" selection-start-line="243" selection-start-column="7" selection-end-line="243" selection-end-column="7" />
+            <state relative-caret-position="407">
+              <caret line="188" column="35" lean-forward="true" selection-start-line="188" selection-start-column="35" selection-end-line="188" selection-end-column="35" />
               <folding>
-                <marker date="1499246997561" expanded="true" signature="16002:16008" ph="←" />
-                <marker date="1499246997561" expanded="true" signature="16124:16130" ph="→" />
+                <marker date="1499335378220" expanded="true" signature="16221:16227" ph="←" />
+                <marker date="1499335378220" expanded="true" signature="16343:16349" ph="→" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/admin/common/footer.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,8 +60,8 @@
       <file leaf-file-name="userServer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/admin/server/userServer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="34" column="19" lean-forward="true" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+            <state relative-caret-position="651">
+              <caret line="48" column="2" lean-forward="true" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -76,8 +70,8 @@
       <file leaf-file-name="userDao.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/admin/dao/userDao.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="44" column="114" lean-forward="true" selection-start-line="44" selection-start-column="114" selection-end-line="44" selection-end-column="114" />
+            <state relative-caret-position="629">
+              <caret line="72" column="51" lean-forward="true" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -86,32 +80,46 @@
       <file leaf-file-name="userAction.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/admin/action/userAction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="43" column="30" lean-forward="false" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+            <state relative-caret-position="374">
+              <caret line="26" column="64" lean-forward="false" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_edit.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user_edit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/admin/user/user_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="66" column="36" lean-forward="true" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
+            <state relative-caret-position="408">
+              <caret line="24" column="72" lean-forward="false" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-423">
-                <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="12" />
-                <folding />
-              </first_editor>
-              <second_editor />
+      <file leaf-file-name="user_read.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/admin/user/user_read.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="818">
+              <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+              <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+              <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+              <caret line="24" column="30" lean-forward="false" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+              <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+              <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+              <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+              <caret line="52" column="30" lean-forward="false" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_add.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/admin/user/user_add.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1694">
+              <caret line="89" column="87" lean-forward="false" selection-start-line="89" selection-start-column="83" selection-end-line="89" selection-end-column="87" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -180,8 +188,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/Downloads/nginx.conf" />
-        <option value="$PROJECT_DIR$/public/stylesheets/common.css" />
         <option value="$PROJECT_DIR$/public/javascripts/www/dean.common.js" />
         <option value="$PROJECT_DIR$/public/bootstrap/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/public/css/www/font-awesome.min.css" />
@@ -225,12 +231,14 @@
         <option value="$PROJECT_DIR$/views/admin/user/userEdit.html" />
         <option value="$PROJECT_DIR$/views/admin/common/footer.html" />
         <option value="$PROJECT_DIR$/views/admin/user/user_add.html" />
-        <option value="$PROJECT_DIR$/routes/admin/server/userServer.js" />
-        <option value="$PROJECT_DIR$/views/admin/user/userList.html" />
-        <option value="$PROJECT_DIR$/public/js/admin/charisma.js" />
+        <option value="$PROJECT_DIR$/routes/tool.js" />
         <option value="$PROJECT_DIR$/routes/admin/dao/userDao.js" />
+        <option value="$PROJECT_DIR$/routes/admin/server/userServer.js" />
         <option value="$PROJECT_DIR$/routes/admin/action/userAction.js" />
         <option value="$PROJECT_DIR$/views/admin/user/user_edit.html" />
+        <option value="$PROJECT_DIR$/views/admin/user/user_read.html" />
+        <option value="$PROJECT_DIR$/views/admin/user/userList.html" />
+        <option value="$PROJECT_DIR$/public/js/admin/charisma.js" />
       </list>
     </option>
   </component>
@@ -561,7 +569,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/js" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="SearchEverywhereHistoryKey" value="c.css&#9;FILE&#9;file://F:/nodeProject/mWar-master/public/css/admin/charisma-app.css&#10;char&#9;FILE&#9;file://F:/nodeProject/mWar-master/public/css/admin/charisma-app.css&#10;inde&#9;FILE&#9;file://F:/nodeProject/mWar-master/views/www/index.html&#10;index&#9;FILE&#9;file://F:/nodeProject/mWar-master/public/charisma-master/index.html&#10;user&#9;FILE&#9;file://F:/nodeProject/mWar-master/views/admin/user/userList.html&#10;i&#9;null&#9;null&#10;msie&#9;null&#9;null&#10;charisma&#9;FILE&#9;file://F:/nodeProject/mWar-master/public/charisma-master/js/charisma.js&#10;table.&#9;FILE&#9;file://F:/nodeProject/mWar-master/public/charisma-master/table.html" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://F:/nodeProject/mWar-master/views/admin/user/user_edit.html&#10;c.css&#9;FILE&#9;file://F:/nodeProject/mWar-master/public/css/admin/charisma-app.css&#10;char&#9;FILE&#9;file://F:/nodeProject/mWar-master/public/css/admin/charisma-app.css&#10;inde&#9;FILE&#9;file://F:/nodeProject/mWar-master/views/www/index.html&#10;index&#9;FILE&#9;file://F:/nodeProject/mWar-master/public/charisma-master/index.html&#10;user&#9;FILE&#9;file://F:/nodeProject/mWar-master/views/admin/user/userList.html&#10;i&#9;null&#9;null&#10;msie&#9;null&#9;null&#10;charisma&#9;FILE&#9;file://F:/nodeProject/mWar-master/public/charisma-master/js/charisma.js&#10;table.&#9;FILE&#9;file://F:/nodeProject/mWar-master/public/charisma-master/table.html" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
@@ -573,11 +581,11 @@
       <recent name="F:\nodeProject\mWar-master\public\stylesheets\www" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\nodeProject\mWar-master\routes" />
       <recent name="F:\nodeProject\mWar-master\views\admin\user" />
       <recent name="F:\nodeProject\mWar-master\public\js\admin" />
       <recent name="F:\nodeProject\mWar-master\views\www\tools" />
       <recent name="F:\nodeProject\mWar-master\routes\www\action" />
-      <recent name="F:\nodeProject\mWar-master\routes\admin\dao" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1007,7 +1015,7 @@
       <workItem from="1498465794906" duration="57000" />
       <workItem from="1498561264305" duration="1151000" />
       <workItem from="1498703748348" duration="10406000" />
-      <workItem from="1499045516687" duration="43423000" />
+      <workItem from="1499045516687" duration="55068000" />
     </task>
     <task id="LOCAL-00001" summary="2017年6月16日10:42:34&#10;初始化项目&#10;整合express  mysql数据库&#10;设置跳转判断 www为PC端 mobile为移动端 admin为管理端">
       <created>1497581084574</created>
@@ -1065,11 +1073,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498465848004</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="user添加修改完成，加入ajaxform插件">
+      <created>1499251990967</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1499251990967</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195240000" />
+    <option name="totallyTimeSpent" value="206885000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1086,7 +1101,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3264642" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3253796" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.282516" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1128,7 +1143,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3264642" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3253796" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.282516" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1151,7 +1166,8 @@
     <MESSAGE value="引入模板" />
     <MESSAGE value="引入express-session" />
     <MESSAGE value="menu样式部分修改，user也跳转显示完成。" />
-    <option name="LAST_COMMIT_MESSAGE" value="menu样式部分修改，user也跳转显示完成。" />
+    <MESSAGE value="user添加修改完成，加入ajaxform插件" />
+    <option name="LAST_COMMIT_MESSAGE" value="user添加修改完成，加入ajaxform插件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1160,20 +1176,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routes/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="133" column="52" lean-forward="false" selection-start-line="133" selection-start-column="52" selection-end-line="133" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/bower_components/bootstrap-tour/src/coffee/bootstrap-tour.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
@@ -1215,6 +1217,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1454,22 +1457,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/user/userAdd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="36" column="10" lean-forward="true" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/common/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="91" lean-forward="false" selection-start-line="11" selection-start-column="82" selection-end-line="11" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/common/js.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
@@ -1486,34 +1473,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/user/user_add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="76" column="52" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="97" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/www/action/indexAction.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/admin/dao/userDao.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="44" column="114" lean-forward="true" selection-start-line="44" selection-start-column="114" selection-end-line="44" selection-end-column="114" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/admin/server/userServer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="34" column="19" lean-forward="true" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -1526,37 +1489,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/user/userList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="47" column="50" lean-forward="false" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/admin/action/userAction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="43" column="30" lean-forward="false" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/admin/charisma.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="243" column="7" lean-forward="true" selection-start-line="243" selection-start-column="7" selection-end-line="243" selection-end-column="7" />
-          <folding>
-            <marker date="1499246997561" expanded="true" signature="16002:16008" ph="←" />
-            <marker date="1499246997561" expanded="true" signature="16124:16130" ph="→" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-423">
+          <first_editor relative-caret-position="22">
             <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="12" />
             <folding />
           </first_editor>
@@ -1564,11 +1500,101 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/tool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/user/user_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1694">
+          <caret line="89" column="87" lean-forward="false" selection-start-line="89" selection-start-column="83" selection-end-line="89" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin/dao/userDao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="72" column="51" lean-forward="true" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin/server/userServer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="48" column="2" lean-forward="true" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin/action/userAction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="26" column="64" lean-forward="false" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/user/user_edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="66" column="36" lean-forward="true" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
+        <state relative-caret-position="408">
+          <caret line="24" column="72" lean-forward="false" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/user/user_read.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="818">
+          <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+          <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+          <caret line="24" column="30" lean-forward="false" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+          <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+          <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+          <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+          <caret line="52" column="30" lean-forward="false" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/common/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/user/userList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/admin/charisma.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="188" column="35" lean-forward="true" selection-start-line="188" selection-start-column="35" selection-end-line="188" selection-end-column="35" />
+          <folding>
+            <marker date="1499335378220" expanded="true" signature="16221:16227" ph="←" />
+            <marker date="1499335378220" expanded="true" signature="16343:16349" ph="→" />
+          </folding>
         </state>
       </provider>
     </entry>

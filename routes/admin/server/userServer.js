@@ -38,3 +38,21 @@ exports.queryUserById = function(data, callback){
     });
 };
 
+exports.editUser = function(data, callback){
+    userDao.editUser(data, function(err, results){
+        if(err){
+            callback(true);
+            return;
+        }
+        callback(false, results);
+    });
+};
+exports.deleteUserById = function(data, callback){
+    userDao.deleteUserById(data, function(err, results){
+        if(err){
+            callback(true);
+            return;
+        }
+        callback(false, results);
+    });
+};

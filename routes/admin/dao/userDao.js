@@ -5,6 +5,7 @@
  * email shankejiazu@126.com
  */
 var db = require(process.cwd()+'/routes/mysql-pool.js');
+var tool = require(process.cwd()+'/routes/tool.js');
 
 exports.queryUser = function(data, callback) {
     var sql = ' SELECT id, '+
@@ -15,7 +16,7 @@ exports.queryUser = function(data, callback) {
               ' email, '+
               ' age, '+
               ' sex, '+
-              ' mark FROM admin_user';
+              ' mark FROM admin_user ORDER BY updatetime DESC ,DATE DESC';
     // get a connection from the pool
     db.jdbc(sql,function (err,results) {
         if(err){
@@ -27,8 +28,10 @@ exports.queryUser = function(data, callback) {
 };
 
 exports.addUser = function(data, callback) {
-    var sql = 'INSERT INTO admin_user (id,username,nickname,PASSWORD,iphone,email,age,sex,mark) '+
-        ' VALUES (\''+db.uuid()+'\',\''+data.username+'\',\''+data.nickname+'\',\''+data.password+'\',\''+data.iphone+'\',\''+data.email+'\','+data.age+',\''+data.sex+'\',\''+data.mark+'\')';
+    var sql = 'INSERT INTO admin_user (id,username,nickname,PASSWORD,iphone,email,age,sex,mark,date) '+
+        ' VALUES (\''+db.uuid()+'\',\''+data.username+'\',\''+data.nickname+'\',\''+data.password+'\',' +
+        '\''+data.iphone+'\',\''+data.email+'\','+data.age+',\''+data.sex+'\',\''+data.mark+'\',' +
+        '\''+tool.gettime()+'\')';
     /*var sql = 'INSERT INTO admin_user (username,PASSWORD) '+
      ' VALUES ('+data.username+'\',\''+data.password+')';*/
     // get a connection from the pool
@@ -55,7 +58,20 @@ exports.queryUserById = function(data, callback) {
 
 exports.editUser = function(data, callback) {
     var sql =" UPDATE admin_user SET username = '"+data.username+"' ,nickname = '"+data.nickname+"' ,PASSWORD = '"+data.password+"' ,iphone = '"+data.iphone+"' ," +
-             " email = '"+data.email+"' ,age = '"+data.age+"' ,sex = '"+data.sex+"' ,mark = '"+data.mark+"' WHERE id = '"+data.id+"' ";
+             " email = '"+data.email+"' ,age = '"+data.age+"' ,sex = '"+data.sex+"' ,mark = '"+data.mark+"'" +
+             " , updatetime = '"+tool.gettime()+"' WHERE id = '"+data.id+"' ";
+    // get a connection from the pool
+    db.jdbc(sql,function (err,results) {
+        if(err){
+            callback(true);
+            return;
+        }
+        callback(false, results);
+    });
+};
+
+exports.deleteUserById = function(data, callback) {
+    var sql = " delete FROM admin_user WHERE id = '"+data.id+"'  ";
     // get a connection from the pool
     db.jdbc(sql,function (err,results) {
         if(err){

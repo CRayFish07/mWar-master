@@ -14,7 +14,6 @@
             <div class="box-header well" data-original-title="">
                 <h2>用户列表</h2>
                 <div class="box-icon">
-                    <a href="user/addPageold" title="添加用户" class="btn btn-round btn-default ajax-modal"><i class="glyphicon glyphicon-plus"></i></a>
                     <a href="user/addPage" title="添加用户" class="btn btn-round btn-default ajax-action"><i class="glyphicon glyphicon-plus"></i></a>
                 </div>
             </div>
@@ -32,7 +31,6 @@
                         <th>序号</th>
                         <th>用户名</th>
                         <th>昵称</th>
-                        <th>密码</th>
                         <th>电话</th>
                         <th>邮箱</th>
                         <th>年龄</th>
@@ -47,14 +45,17 @@
                             <td><%=index+1%></td>
                             <td><%=item.username%></td>
                             <td><%=item.nickname%></td>
-                            <td><%=item.password%></td>
                             <td><%=item.iphone%></td>
                             <td><%=item.email%></td>
                             <td><%=item.age%></td>
-                            <td><%=item.sex%></td>
+                            <td>
+                                <% if(item.sex=='1'){%>男<%}%>
+                                <% if(item.sex=='0'){%>女<%}%>
+                                <% if(item.sex!='1'&&item.sex!='0'){%>其他<%}%>
+                            </td>
                             <td><%=item.mark%></td>
                             <td class="center ">
-                                <a class="btn btn-success" href="#">
+                                <a class="btn btn-success ajax-modal" href="user/read" data-id="<%=item.id%>">
                                     <i class="glyphicon glyphicon-zoom-in icon-white"></i>
                                     查看
                                 </a>
@@ -66,7 +67,7 @@
                                     <i class="glyphicon glyphicon-edit icon-white"></i>
                                     权限
                                 </a>
-                                <a class="btn btn-danger" href="#">
+                                <a class="btn btn-danger ajax-action" href="user/delete" data-id="<%=item.id%>" title="删除用户">
                                     <i class="glyphicon glyphicon-trash icon-white"></i>
                                     删除
                                 </a>
