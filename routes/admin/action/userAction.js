@@ -7,15 +7,36 @@
 var express = require('express');
 var router = express.Router();
 var userServer = require('../server/userServer.js');
+var async = require('async');
 
 /* GET userList page. */
 router.get('/list', function(req, res, next) {
-    userServer.queryUser("data",function (err, results) {
-        if(err.length > 0){
-            return err;
+    var totalRow = "";			//总条数
+    var pageSize = 10;			//每页显示多少条
+    var pageNumber = 1;		    //当前第几页
+    var totalPages ="";
+    async.waterfall([
+        function (callback) {
+            userServer.queryUserPage(function (err,result) {
+                if(err.length > 0){
+                    return err;
+                }
+                totalRow=result[0].totalRow;
+                totalPages = Math.ceil(totalRow/pageSize);		//总页数
+                var data = "LIMIT "+((pageNumber*pageSize)-pageSize)+" , "+pageNumber*pageSize+"";
+                callback(null,data);
+            });
+
+        },function (data) {
+            userServer.queryUser(data,function (err, results) {
+                if(err.length > 0){
+                    return err;
+                }
+                return res.render('admin/user/user',{items:results,totalRow:totalRow,pageSize:pageSize,pageNumber:pageNumber,totalPages:totalPages});
+            });
         }
-        return res.render('admin/user/userList',{items:results});
-    });
+    ]);
+
 });
 
 router.get('/read', function(req, res, next) {

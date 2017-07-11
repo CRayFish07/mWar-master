@@ -235,7 +235,6 @@ function doLink() {
     });
 }
 function save(id) {
-    console.log("423423");
     $("#"+id).ajaxSubmit({
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         type: "post",

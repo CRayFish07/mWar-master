@@ -7,16 +7,22 @@
 var db = require(process.cwd()+'/routes/mysql-pool.js');
 var tool = require(process.cwd()+'/routes/tool.js');
 
+exports.queryUserPage = function(callback) {
+    var sql = ' SELECT COUNT(*) totalRow FROM admin_user ';
+    // get a connection from the pool
+    db.jdbc(sql,function (err,results) {
+        if(err){
+            callback(true);
+            return;
+        }
+        callback(false, results);
+    });
+};
+
 exports.queryUser = function(data, callback) {
-    var sql = ' SELECT id, '+
-              ' username, '+
-              ' nickname, '+
-              ' PASSWORD, '+
-              ' iphone, '+
-              ' email, '+
-              ' age, '+
-              ' sex, '+
-              ' mark FROM admin_user ORDER BY updatetime DESC ,DATE DESC';
+    var sql = " SELECT id, username,nickname,PASSWORD,iphone, " +
+        "email,age, sex,mark FROM admin_user " +
+        "ORDER BY DATE DESC ,updatetime DESC " + data;
     // get a connection from the pool
     db.jdbc(sql,function (err,results) {
         if(err){
