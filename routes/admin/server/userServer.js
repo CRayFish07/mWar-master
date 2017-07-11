@@ -7,6 +7,16 @@
 //查询top模块
 var userDao = require('../dao/userDao.js');
 
+//查询用户分页
+exports.queryUserPage = function(callback){
+    userDao.queryUserPage(function(err, results){
+        if(err){
+            callback(true);
+            return;
+        }
+        callback(false, results);
+    });
+};
 //查询用户
 exports.queryUser = function(data, callback){
     userDao.queryUser(data, function(err, results){

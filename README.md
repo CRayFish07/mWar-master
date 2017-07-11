@@ -32,6 +32,8 @@ npm install forever -gd
 #加入express-session
 >npm install --save express-session session-file-store
 
+#加入async控制异步
+>npm install async
 <!--<h1>电脑端首页</h1>
 <h1><%= title %></h1>
 <p><a href="/form">发表新文章111</a></p>
