@@ -14,7 +14,7 @@ router.get('/list', function(req, res, next) {
         if(err.length > 0){
             return err;
         }
-        return res.render('admin/user/userList',{items:results});
+        return res.render('admin/user/user',{items:results});
     });
 });
 
