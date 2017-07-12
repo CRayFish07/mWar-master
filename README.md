@@ -34,6 +34,9 @@ npm install forever -gd
 
 #加入async控制异步
 >npm install async
+
+#遗留问题
+>1，分页部分代码逻辑有问题，需要精简。
 <!--<h1>电脑端首页</h1>
 <h1><%= title %></h1>
 <p><a href="/form">发表新文章111</a></p>
