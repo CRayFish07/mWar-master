@@ -10,10 +10,10 @@ var userServer = require('../server/userServer.js');
 var async = require('async');
 
 /* GET userList page. */
-router.get('/list', function(req, res, next) {
+router.all('/list', function(req, res, next) {
     var totalRow = "";			//总条数
     var pageSize = 10;			//每页显示多少条
-    var pageNumber = 1;		    //当前第几页
+    var pageNumber = req.body.pageNumber != undefined ? req.body.pageNumber : 1;		    //当前第几页
     var totalPages ="";
     async.waterfall([
         function (callback) {
@@ -23,7 +23,7 @@ router.get('/list', function(req, res, next) {
                 }
                 totalRow=result[0].totalRow;
                 totalPages = Math.ceil(totalRow/pageSize);		//总页数
-                var data = "LIMIT "+((pageNumber*pageSize)-pageSize)+" , "+pageNumber*pageSize+"";
+                var data = "LIMIT "+((pageNumber-1)*pageSize)+","+pageSize+"";
                 callback(null,data);
             });
 
