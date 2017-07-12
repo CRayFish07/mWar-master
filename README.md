@@ -37,24 +37,7 @@ npm install forever -gd
 
 #遗留问题
 >1，分页部分代码逻辑有问题，需要精简。
-<!--<h1>电脑端首页</h1>
-<h1><%= title %></h1>
-<p><a href="/form">发表新文章111</a></p>
-<ul>
-    <%items.forEach(function(item){%>
-    <li><%=item.id%></li>
-    <li><%=item.username%></li>
-    <li><%=item.nikename%></li>
-    <li><%=item.password%></li>
-    <li><%=item.age%></li>
-    <li><%=item.sex%></li>
-    <li><%=item.email%></li>
-    <br/>
-    <%})%>
 
-    <ul class="nav nav-pills">
-        <li role="presentation" class="active"><a href="#">Home</a></li>
-        <li role="presentation"><a href="#">Profile</a></li>
-        <li role="presentation"><a href="#">Messages</a></li>
-    </ul>
-</ul>-->
+#下一步工作内容2017年7月12日
+>1，增加menu列表，实现管理。
+>2，增加权限列表，实现crud，串联user表实现赋予权限。
