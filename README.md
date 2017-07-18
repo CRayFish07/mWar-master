@@ -41,3 +41,4 @@ npm install forever -gd
 #下一步工作内容2017年7月12日
 >1，增加menu列表，实现管理。
 >2，增加权限列表，实现crud，串联user表实现赋予权限。
+>3, Promise可能比async更加的易用与流行一些，准备替换后实验一下。
