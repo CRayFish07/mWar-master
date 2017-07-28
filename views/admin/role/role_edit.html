@@ -1,0 +1,99 @@
+<div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="/admin/index">主页</a>
+        </li>
+        <li>
+            <a href="/admin/user/list">用户列表</a>
+        </li>
+        <li>
+            <a href="/admin/user/user_add">添加用户</a>
+        </li>
+    </ul>
+</div>
+<div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="glyphicon glyphicon-edit"></i> 修改用户</h2>
+                <div class="box-icon">
+                    <a href="#" class="btn btn-close btn-round btn-default"><i class="glyphicon glyphicon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <form role="form" class="form-horizontal" action="user/edit" method="post" id="usereditForm">
+                    <input type="hidden"  name="id" value="<%=item[0].id%>">
+                    <div class="form-group">
+                        <label for="username" class="control-label col-sm-2">用户名</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="username" name="username" value="<%=item[0].username%>" placeholder="用户名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nickname" class="control-label col-sm-2">昵  称</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="nickname" name="nickname" value="<%=item[0].nickname%>" placeholder="昵称">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label col-sm-2">密  码</label>
+                        <div class="col-sm-4">
+                            <input type="password" class="form-control" id="password" name="password" value="<%=item[0].nickname%>" placeholder="密码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="iphone" class="control-label col-sm-2">手机号</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="iphone" name="iphone" value="<%=item[0].iphone%>" placeholder="手机号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="control-label col-sm-2">邮件</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="email" name="email" value="<%=item[0].email%>" placeholder="邮件">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="age" class="control-label col-sm-2">年  龄 </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="age" name="age" value="<%=item[0].age%>" placeholder="年龄">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">性别</label>
+                        <div class="radio col-sm-1">
+                            <label>
+                                <input type="radio" name="sex" id="optionsRadios1" value="1" <%if(item[0].sex==1){%>checked<%}%>>
+                                男
+                            </label>
+                        </div>
+                        <div class="radio col-sm-1">
+                            <label>
+                                <input type="radio" name="sex" id="optionsRadios2" value="0" <%if(item[0].sex==0){%>checked<%}%>>
+                                女
+                            </label>
+                        </div>
+                        <div class="radio col-sm-1">
+                            <label>
+                                <input type="radio" name="sex" id="optionsRadios3" value="3" <%if(item[0].sex!=0&&item[0].sex!=1){%>checked<%}%>>
+                                其他
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mark" class="control-label col-sm-2">备注</label>
+                        <div class="col-sm-4">
+                            <textarea  class="form-control" id="mark" name="mark" placeholder="备注"><%=item[0].mark%></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-6">
+                            <button type="button" class="btn btn-primary" onclick="save('usereditForm')">更新</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--/span-->
+</div>

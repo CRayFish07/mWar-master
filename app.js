@@ -8,17 +8,19 @@ var ejs = require('ejs');
 var session = require('express-session');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
 var login = require('./routes/login');
+var users = require('./routes/users');
 
 //www路由
 var windex = require('./routes/www/action/indexAction');
 var wtools = require('./routes/www/action/toolsAction');
+var wplay = require('./routes/www/action/playAction');
 
 //admin路由
 var adminIndex = require('./routes/admin/action/indexAction');
 var adminLogin = require('./routes/admin/action/loginAction');
 var adminUser = require('./routes/admin/action/userAction.js');
+var adminRole = require('./routes/admin/action/roleAction.js');
 
 var app = express();
 
@@ -62,12 +64,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/login', login);
+
+//www
 app.use('/index', windex);
 app.use('/tools', wtools);
+app.use('/play', wplay);
 
+//admin
 app.use('/admin', adminIndex);
 app.use('/admin/login', adminLogin);
 app.use('/admin/user', adminUser);
+app.use('/admin/role', adminRole);
 
 
 // catch 404 and forward to error handler
