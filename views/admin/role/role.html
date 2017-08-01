@@ -41,13 +41,14 @@
                         <tr>
                             <td><%=index+1%></td>
                             <td><%=item.roleName%></td>
-                            <td><%=item.enabled%></td>
                             <td>
                                 <% if(item.enabled=='1'){%>可用<%}%>
                                 <% if(item.enabled=='0'){%>不可用<%}%>
                                 <% if(item.enabled!='1'&&item.enabled!='0'){%>错误<%}%>
                             </td>
-                            <td><%=item.createDate%></td>
+                            <td>
+                                <%=item.createDate%>
+                            </td>
                             <td class="center ">
                                 <a class="btn btn-success ajax-modal" href="role/read" data-id="<%=item.id%>">
                                     <i class="glyphicon glyphicon-zoom-in icon-white"></i>
@@ -56,10 +57,6 @@
                                 <a class="btn btn-info ajax-action" href="role/editPage" data-id="<%=item.id%>" title="修改用户">
                                     <i class="glyphicon glyphicon-edit icon-white"></i>
                                     修改
-                                </a>
-                                <a class="btn btn-primary" href="#">
-                                    <i class="glyphicon glyphicon-edit icon-white"></i>
-                                    权限
                                 </a>
                                 <a class="btn btn-danger ajax-action" href="role/delete" data-id="<%=item.id%>" title="删除用户">
                                     <i class="glyphicon glyphicon-trash icon-white"></i>

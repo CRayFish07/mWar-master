@@ -26,12 +26,12 @@ router.all('/list', function(req, res, next) {
                 var data = "LIMIT "+((pageNumber-1)*pageSize)+","+pageSize+"";
                 callback(null,data);
             });
-
         },function (data) {
             roleServer.queryRole(data,function (err, results) {
                 if(err.length > 0){
                     return err;
                 }
+                console.info(results);
                 return res.render('admin/role/role',{items:results,totalRow:totalRow,pageSize:pageSize,pageNumber:pageNumber,totalPages:totalPages});
             });
         }
