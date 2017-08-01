@@ -12,7 +12,7 @@ var indexService = require('../service/indexService');
 router.post('/loginAction', function(req, res, next) {
     if (!req.body) return res.sendStatus(400);
     indexService.queryUser(req.body , function (err,result) {
-        if(result.length == 0){
+        if(err){
             return res.json({err:0});
         }
         req.session.user = result[0];
