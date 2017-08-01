@@ -6,7 +6,7 @@
  */
 var express = require('express');
 var router = express.Router();
-var roleServer = require('../service/roleService.js');
+var roleService = require('../service/roleService.js');
 const async = require('async');
 
 /* GET roleList page. */
@@ -17,7 +17,7 @@ router.all('/list', function(req, res, next) {
     var totalPages ="";
     async.waterfall([
         function (callback) {
-            roleServer.queryRolePage(function (err,result) {
+            roleService.queryRolePage(function (err,result) {
                 if(err.length > 0){
                     return err;
                 }
@@ -27,7 +27,7 @@ router.all('/list', function(req, res, next) {
                 callback(null,data);
             });
         },function (data) {
-            roleServer.queryRole(data,function (err, results) {
+            roleService.queryRole(data,function (err, results) {
                 if(err.length > 0){
                     return err;
                 }
@@ -39,7 +39,7 @@ router.all('/list', function(req, res, next) {
 
 router.get('/read', function(req, res, next) {
     if (!req.body) return res.sendStatus(400);
-    roleServer.queryRoleById(req.query,function (err, results) {
+    roleService.queryRoleById(req.query,function (err, results) {
         if(err.length > 0){
             return err;
         }
@@ -53,7 +53,7 @@ router.get('/addPage', function(req, res, next) {
 
 router.post('/add', function(req, res, next) {
     if (!req.body) return res.sendStatus(400);
-    roleServer.addRole(req.body,function (err, results) {
+    roleService.addRole(req.body,function (err, results) {
         if(err.length > 0){
             return err;
         }
@@ -62,7 +62,7 @@ router.post('/add', function(req, res, next) {
 });
 router.get('/editPage', function(req, res, next) {
     if (!req.body) return res.sendStatus(400);
-    roleServer.queryRoleById(req.query,function (err, results) {
+    roleService.queryRoleById(req.query,function (err, results) {
         if(err.length > 0){
             return err;
         }
@@ -73,7 +73,7 @@ router.get('/editPage', function(req, res, next) {
 
 router.post('/edit', function(req, res, next) {
     if (!req.body) return res.sendStatus(400);
-    roleServer.editRole(req.body,function (err, results) {
+    roleService.editRole(req.body,function (err, results) {
         if(err.length > 0){
             return err;
         }
@@ -84,7 +84,7 @@ router.post('/edit', function(req, res, next) {
 
 router.get('/delete', function(req, res, next) {
     if (!req.body) return res.sendStatus(400);
-    roleServer.deleteRoleById(req.query,function (err, results) {
+    roleService.deleteRoleById(req.query,function (err, results) {
         if(err.length > 0){
             return err;
         }

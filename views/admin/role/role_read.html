@@ -4,55 +4,25 @@
 <form role="form" class="form-horizontal" method="post">
     <input type="hidden"  name="id" value="<%=item[0].id%>">
     <div class="form-group">
-        <label class="col-sm-4">用户名</label>
+        <label class="col-sm-4">角色名称</label>
         <div class="col-sm-4">
-            <p><%=item[0].username%></p>
+            <p><%=item[0].roleName%></p>
         </div>
     </div>
     <div class="form-group">
-        <label class="col-sm-4">昵  称</label>
+        <label class="col-sm-4">是否可用</label>
         <div class="col-sm-4">
-            <p><%=item[0].nickname%></p>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-sm-4">密  码</label>
-        <div class="col-sm-4">
-            <p><%=item[0].password%></p>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-sm-4">手机号</label>
-        <div class="col-sm-4">
-            <p><%=item[0].iphone%></p>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-sm-4">邮件</label>
-        <div class="col-sm-4">
-            <p><%=item[0].email%></p>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-sm-4">年  龄 </label>
-        <div class="col-sm-4">
-            <p><%=item[0].age%></p>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-sm-4">性别</label>
-        <div class="radio col-sm-1">
             <p>
-                <%if(item[0].sex==1){%>男<%}%>
-                <%if(item[0].sex==0){%>女<%}%>
-                <%if(item[0].sex!=0&&item[0].sex!=1){%>其他<%}%>
+                <% if(item[0].enabled=='1'){%>可用<%}%>
+                <% if(item[0].enabled=='0'){%>不可用<%}%>
+                <% if(item[0].enabled!='1'&&item[0].enabled!='0'){%>错误<%}%>
             </p>
         </div>
     </div>
     <div class="form-group">
-        <label class="col-sm-4">备注</label>
+        <label class="col-sm-4">创建时间</label>
         <div class="col-sm-4">
-            <p><%=item[0].mark%></p>
+            <p><%=item[0].createDate%></p>
         </div>
     </div>
 </form>
