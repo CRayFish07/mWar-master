@@ -6,7 +6,7 @@
  */
 var express = require('express');
 var router = express.Router();
-var userServer = require('../server/userServer.js');
+var userServer = require('../service/userService.js');
 const async = require('async');
 
 /* GET userList page. */

@@ -6,7 +6,7 @@
  */
 var express = require('express');
 var router = express.Router();
-var roleServer = require('../server/roleServer.js');
+var roleServer = require('../service/roleService.js');
 const async = require('async');
 
 /* GET roleList page. */
@@ -31,7 +31,6 @@ router.all('/list', function(req, res, next) {
                 if(err.length > 0){
                     return err;
                 }
-                console.info(results);
                 return res.render('admin/role/role',{items:results,totalRow:totalRow,pageSize:pageSize,pageNumber:pageNumber,totalPages:totalPages});
             });
         }

@@ -6,7 +6,7 @@
  */
 var express = require('express');
 var router = express.Router();
-var indexServer = require('../server/indexServer.js');
+var indexServer = require('../service/indexService.js');
 
 
 /* GET home page. */

@@ -6,7 +6,7 @@
  */
 var express = require('express');
 var router = express.Router();
-var indexService = require('../server/indexServer');
+var indexService = require('../service/indexService');
 
 /* GET login page. */
 router.post('/loginAction', function(req, res, next) {

@@ -6,7 +6,7 @@
  */
 var express = require('express');
 var router = express.Router();
-var loginServer = require('../server/loginServer.js');
+var loginServer = require('../service/loginService.js');
 
 
 /* GET home page. */
