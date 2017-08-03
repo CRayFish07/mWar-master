@@ -14,7 +14,7 @@
             <div class="box-header well" data-original-title="">
                 <h2>用户列表</h2>
                 <div class="box-icon">
-                    <a href="user/addPage" title="添加用户" class="btn btn-round btn-default ajax-action"><i class="glyphicon glyphicon-plus"></i></a>
+                    <a href="/admin/user/addPage" title="添加用户" class="btn btn-round btn-default ajax-action"><i class="glyphicon glyphicon-plus"></i></a>
                 </div>
             </div>
             <div class="box-content clearfix">
@@ -56,11 +56,11 @@
                             </td>
                             <td><%=item.mark%></td>
                             <td class="center ">
-                                <a class="btn btn-success ajax-modal" href="user/read" data-id="<%=item.id%>">
+                                <a class="btn btn-success ajax-modal" href="/admin/user/read" data-id="<%=item.id%>">
                                     <i class="glyphicon glyphicon-zoom-in icon-white"></i>
                                     查看
                                 </a>
-                                <a class="btn btn-info ajax-action" href="user/editPage" data-id="<%=item.id%>" title="修改用户">
+                                <a class="btn btn-info ajax-action" href="/admin/user/editPage" data-id="<%=item.id%>" title="修改用户">
                                     <i class="glyphicon glyphicon-edit icon-white"></i>
                                     修改
                                 </a>

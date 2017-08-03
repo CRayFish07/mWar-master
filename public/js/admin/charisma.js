@@ -120,7 +120,6 @@ $(document).ready(function () {
             url: $(this).attr('href'),
             dataType: "html",
             success: function (html) {
-                console.log(html);
                 if(html){
                     $("#content").empty().append(html);
                 } else{

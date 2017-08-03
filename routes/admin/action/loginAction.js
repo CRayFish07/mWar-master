@@ -10,7 +10,7 @@ var loginServer = require('../service/loginService.js');
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.all('/', function(req, res, next) {
     res.render('admin/login', {title:'后台管理登入'});
 });
 

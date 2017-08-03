@@ -14,7 +14,7 @@
             <div class="box-header well" data-original-title="">
                 <h2>角色列表</h2>
                 <div class="box-icon">
-                    <a href="role/addPage" title="添加角色" class="btn btn-round btn-default ajax-action"><i class="glyphicon glyphicon-plus"></i></a>
+                    <a href="/admin/role/addPage" title="添加角色" class="btn btn-round btn-default ajax-action"><i class="glyphicon glyphicon-plus"></i></a>
                 </div>
             </div>
             <div class="box-content clearfix">
@@ -50,15 +50,15 @@
                                 <%=item.createDate%>
                             </td>
                             <td class="center ">
-                                <a class="btn btn-success ajax-modal" href="role/read" data-id="<%=item.id%>">
+                                <a class="btn btn-success ajax-modal" href="/admin/role/read" data-id="<%=item.id%>">
                                     <i class="glyphicon glyphicon-zoom-in icon-white"></i>
                                     查看
                                 </a>
-                                <a class="btn btn-info ajax-action" href="role/editPage" data-id="<%=item.id%>" title="修改用户">
+                                <a class="btn btn-info ajax-action" href="/admin/role/editPage" data-id="<%=item.id%>" title="修改用户">
                                     <i class="glyphicon glyphicon-edit icon-white"></i>
                                     修改
                                 </a>
-                                <a class="btn btn-danger ajax-action" href="role/delete" data-id="<%=item.id%>" title="删除用户">
+                                <a class="btn btn-danger ajax-action" href="/admin/role/delete" data-id="<%=item.id%>" title="删除用户">
                                     <i class="glyphicon glyphicon-trash icon-white"></i>
                                     删除
                                 </a>

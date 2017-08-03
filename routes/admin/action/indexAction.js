@@ -21,12 +21,16 @@ router.post('/loginAction', function(req, res, next) {
 });
 
 /* GET home page. */
-router.get('/index', function(req, res, next) {
-    console.log(req.session.user);
+router.get('/', function(req, res, next) {
+    console.log('进入后台管理');
     if (!req.session.user) {
         return res.redirect('/admin/login');
     }
     return res.render('admin/index',{title:'后台管理首页'});
+});
+router.get('/logout', function(req, res, next) {
+    req.session.user = false;
+    return res.redirect('/admin/login');
 });
 module.exports = router;
 

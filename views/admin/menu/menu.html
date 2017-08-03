@@ -1,0 +1,71 @@
+<div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="/admin/index">主页</a>
+        </li>
+        <li>
+            <a href="/admin/menu/list">菜单列表</a>
+        </li>
+    </ul>
+</div>
+<div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2>菜单列表</h2>
+                <div class="box-icon">
+                    <a href="menu/addPage" title="添加用户" class="btn btn-round btn-default ajax-action"><i class="glyphicon glyphicon-plus"></i></a>
+                </div>
+            </div>
+            <div class="box-content clearfix">
+                <form id="splitPage" action="/admin/menu/list" method="post">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>菜单名称</th>
+                            <th>菜单类型</th>
+                            <th>菜单地址</th>
+                            <th>菜单图片</th>
+                            <th>是否展开</th>
+                            <th>创建时间</th>
+                            <th>备注</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <%items.forEach(function(item,index){%>
+                        <tr>
+                            <td><%=index+1%></td>
+                            <td><%=item.menuName%></td>
+                            <td><%=item.menuType%></td>
+                            <td><%=item.request%></td>
+                            <td><%=item.image%></td>
+                            <td><%=item.expand%></td>
+                            <td><%=item.createDate%></td>
+                            <td><%=item.remark%></td>
+                            <td class="center ">
+                                <a class="btn btn-success ajax-modal" href="menu/read" data-id="<%=item.id%>">
+                                    <i class="glyphicon glyphicon-zoom-in icon-white"></i>
+                                    查看
+                                </a>
+                                <a class="btn btn-info ajax-action" href="menu/editPage" data-id="<%=item.id%>" title="修改用户">
+                                    <i class="glyphicon glyphicon-edit icon-white"></i>
+                                    修改
+                                </a>
+                                <a class="btn btn-danger ajax-action" href="menu/delete" data-id="<%=item.id%>" title="删除用户">
+                                    <i class="glyphicon glyphicon-trash icon-white"></i>
+                                    删除
+                                </a>
+                            </td>
+                        </tr>
+                        <%})%>
+                        </tbody>
+                    </table>
+                </form>
+
+                <% include ../common/page.html %>
+            </div>
+        </div>
+    </div>
+    <!--/span-->
+</div>

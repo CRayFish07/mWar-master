@@ -35,11 +35,9 @@ exports.queryUser = function(data, callback) {
 
 exports.addUser = function(data, callback) {
     var sql = 'INSERT INTO admin_user (id,username,nickname,PASSWORD,iphone,email,age,sex,mark,date) '+
-        ' VALUES (\''+db.uuid()+'\',\''+data.username+'\',\''+data.nickname+'\',\''+data.password+'\',' +
+        ' VALUES (\''+db.uuid()+'\',\''+data.username+'\',\''+data.nickname+'\',\''+tool.md5(data.password)+'\',' +
         '\''+data.iphone+'\',\''+data.email+'\','+data.age+',\''+data.sex+'\',\''+data.mark+'\',' +
         '\''+tool.gettime()+'\')';
-    /*var sql = 'INSERT INTO admin_user (username,PASSWORD) '+
-     ' VALUES ('+data.username+'\',\''+data.password+')';*/
     // get a connection from the pool
     db.jdbc(sql,function (err,results) {
         if(err){

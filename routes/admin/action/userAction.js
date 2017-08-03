@@ -9,6 +9,7 @@ var router = express.Router();
 var userServer = require('../service/userService.js');
 const async = require('async');
 
+
 /* GET userList page. */
 router.all('/list', function(req, res, next) {
     var totalRow = "";			//总条数
