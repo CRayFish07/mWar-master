@@ -28,7 +28,9 @@ router.get('/', function(req, res, next) {
     }
     return res.render('admin/index',{title:'后台管理首页'});
 });
+
 router.get('/logout', function(req, res, next) {
+    //delete req.session.user; 错误方法
     req.session.user = false;
     return res.redirect('/admin/login');
 });

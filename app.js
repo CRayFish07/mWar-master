@@ -21,6 +21,10 @@ var adminIndex = require('./routes/admin/action/indexAction');
 var adminLogin = require('./routes/admin/action/loginAction');
 var adminUser = require('./routes/admin/action/userAction.js');
 var adminRole = require('./routes/admin/action/roleAction.js');
+var adminMenu = require('./routes/admin/action/menuAction.js');
+
+//载入全局变量(未采用此方法，此方法为初始化载入内存)
+//global.gConfig  = require('./page-config');
 
 var app = express();
 
@@ -75,6 +79,7 @@ app.use('/admin', adminIndex);
 app.use('/admin/login', adminLogin);
 app.use('/admin/user', adminUser);
 app.use('/admin/role', adminRole);
+app.use('/admin/menu', adminMenu);
 
 
 // catch 404 and forward to error handler

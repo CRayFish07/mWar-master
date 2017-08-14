@@ -8,22 +8,22 @@ var express = require('express');
 var router = express.Router();
 var roleService = require('../service/roleService.js');
 const async = require('async');
+const pageConfig = require(process.cwd()+'/page-config');
+var page = pageConfig.page;
+
 
 /* GET roleList page. */
 router.all('/list', function(req, res, next) {
-    var totalRow = "";			//总条数
-    var pageSize = 10;			//每页显示多少条
-    var pageNumber = req.body.pageNumber != undefined ? req.body.pageNumber : 1;		    //当前第几页
-    var totalPages ="";
+    page.number = req.body.pageNumber != undefined ? req.body.pageNumber : page.number;
     async.waterfall([
         function (callback) {
             roleService.queryRolePage(function (err,result) {
                 if(err.length > 0){
                     return err;
                 }
-                totalRow=result[0].totalRow;
-                totalPages = Math.ceil(totalRow/pageSize);		//总页数
-                var data = "LIMIT "+((pageNumber-1)*pageSize)+","+pageSize+"";
+                page.totalRow=result[0].totalRow;
+                page.totalNumber = Math.ceil(page.totalRow/page.size);
+                var data = "LIMIT "+((page.number-1)*page.size)+","+page.size+"";
                 callback(null,data);
             });
         },function (data) {
@@ -31,7 +31,7 @@ router.all('/list', function(req, res, next) {
                 if(err.length > 0){
                     return err;
                 }
-                return res.render('admin/role/role',{items:results,totalRow:totalRow,pageSize:pageSize,pageNumber:pageNumber,totalPages:totalPages});
+                return res.render('admin/role/role',{items:results,page});
             });
         }
     ]);

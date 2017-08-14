@@ -5,6 +5,8 @@
  * email shankejiazu@126.com
  */
 const crypto =require('crypto');
+const pageConfig = require(process.cwd()+'/page-config');
+const page = pageConfig.page;
 
 //yyyy-MM-dd HH:MM:SS
 exports.gettime = function() {
@@ -33,3 +35,11 @@ exports.md5 = function (text) {
         console.log('md5加密错误');
     }
 };
+
+exports.pageSql = function (totalRow) {
+    page.totalRow=totalRow;
+    page.totalNumber = Math.ceil(page.totalRow/page.size);
+    var data = "LIMIT "+((page.number-1)*page.size)+","+page.size+"";
+    return data;
+};
+
